@@ -2,8 +2,8 @@
   "name": "deploy-github2",
   "version": "0.1.0",
   "private": true,
+  "homepage":  "https://toanpham9494.github.io/your-repo2/",
   "dependencies": {
-    "homepage":  "https://toanpham9494.github.io/your-repo2/",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
