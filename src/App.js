@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Row from "./components/Row/Row";
+import requests from "./api/requests";
+import Header from "./components/Header/Header";
+import Banner from "./components/Banner/Banner";
+
+const data = [
+  {
+    title: "Trending",
+    fetchUrl: requests.trendingMovies,
+    isPoster: true,
+  },
+  {
+    title: "Top rated",
+    fetchUrl: requests.topRatedMovies,
+    isPoster: false,
+  },
+  {
+    title: "Action",
+    fetchUrl: requests.actionMovies,
+    isPoster: false,
+  },
+  {
+    title: "Adventure",
+    fetchUrl: requests.adventureMovies,
+    isPoster: false,
+  },
+  {
+    title: "Animation",
+    fetchUrl: requests.animationMovies,
+    isPoster: false,
+  },
+  {
+    title: "Comedy",
+    fetchUrl: requests.comedyMovies,
+    isPoster: false,
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Banner fetchUrl={requests.trendingMovies} />
+      {data.map((item, index) => (
+        <Row key={index} {...item} />
+      ))}
     </div>
   );
 }
